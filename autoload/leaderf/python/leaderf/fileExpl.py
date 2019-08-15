@@ -274,7 +274,7 @@ class FileExplorer(Explorer):
             else:
                 show_hidden = "--hidden"
 
-            cmd = 'rg --no-messages --files %s %s %s %s "%s"' % (color, ignore, followlinks, show_hidden, dir)
+            cmd = 'rg --no-messages --no-ignore-vcs --files %s %s %s %s "%s"' % (color, ignore, followlinks, show_hidden, dir)
         elif default_tool["pt"] and lfEval("executable('pt')") == '1' and os.name != 'nt': # there is bug on Windows
             wildignore = lfEval("g:Lf_WildIgnore")
             ignore = ""
